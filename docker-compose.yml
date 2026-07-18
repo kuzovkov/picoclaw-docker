@@ -1,0 +1,21 @@
+x-anchors:
+  args: &current-user-info
+    user: ${USER:-ubuntu}
+    user_id: ${USER_ID:-1000}
+    group_id: ${GROUP_ID:-1001}
+
+services:
+  app:
+    image: picoclaw
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: *current-user-info
+    volumes:
+      - ./shared:/shared
+    environment:
+      PICOCLAW_GATEWAY_HOST: 0.0.0.0
+#    entrypoint: ""
+    ports:
+      - 18800:18800
+       
