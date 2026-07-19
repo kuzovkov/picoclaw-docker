@@ -19,4 +19,20 @@ services:
 #    entrypoint: ""
     ports:
       - 18800:18800
+
+  browser:
+    image: browser
+    build:
+      context: ./browser
+      dockerfile: Dockerfile
+      args: *current-user-info
+    shm_size: 2gb
+    ports:
+      - "9223:9223"
+    volumes:
+      - ./browser/chrome-profile:/home/${USER}/chrome-profile
+    devices:
+      - /dev/dri:/dev/dri
+    security_opt:
+      - seccomp:unconfined
        

@@ -244,6 +244,12 @@ docker compose ps
 docker compose exec app bash
 ```
 
+### Install agent-browser
+```bash
+npm i -g agent-browser && agent-browser install
+agent-browser install --with-deps
+```
+
 ## License
 
 This Docker configuration wraps the [PicoClaw](https://github.com/sipeed/picoclaw) project by Sipeed. Refer to the original project for licensing details.
