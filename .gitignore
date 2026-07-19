@@ -11,3 +11,4 @@ wheels/
 .venv
 .gigacode
 picoclaw_data/*
+browser/chrome-profile/*

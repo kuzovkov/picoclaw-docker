@@ -32,7 +32,7 @@ google-chrome \
       --profile-directory=Default \
       --window-size=1920,1080 \
       --no-first-run \
-      --no-default-browser-check
+      --no-default-browser-check &
 
 CHROME_PID=$!
 
@@ -42,6 +42,7 @@ done
 
 socat TCP-LISTEN:9223,fork,reuseaddr TCP:127.0.0.1:9222 &
 
+# Keep the container running — wait for Chrome to exit
 wait $CHROME_PID
 
 
