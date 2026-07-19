@@ -13,6 +13,7 @@ services:
       args: *current-user-info
     volumes:
       - ./shared:/shared
+      - ./picoclaw_data:/home/${USER}/.picoclaw
     environment:
       PICOCLAW_GATEWAY_HOST: 0.0.0.0
 #    entrypoint: ""
